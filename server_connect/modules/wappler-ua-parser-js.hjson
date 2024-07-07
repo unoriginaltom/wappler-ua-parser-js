@@ -1,0 +1,53 @@
+{
+  type: 'wappler-ua-parser-js',
+  module: 'wappler-ua-parser-js',
+  action: 'parseUA',
+  groupTitle : 'User Agent',
+  groupIcon : 'fa fa-lg fa-user',
+  title : 'Parse User Agent: @@var(actionName)@@',
+  icon : 'fa fa-lg fa-info-circle',
+  dataScheme: [
+    {
+      name: 'browser', type: 'object', sub: [
+        { name: 'name', type: 'string' },
+        { name: 'version', type: 'string' },
+        { name: 'major', type: 'string' }
+      ]
+    },
+    {
+      name: 'cpu', type: 'object', sub: [
+        { name: 'architecture', type: 'string' }
+      ]
+    },
+    {
+      name: 'device', type: 'object', sub: [
+        { name: 'model', type: 'string' },
+        { name: 'type', type: 'string' },
+        { name: 'vendor', type: 'string' }
+      ]
+    },
+    {
+      name: 'engine', type: 'object', sub: [
+        { name: 'name', type: 'string' },
+        { name: 'version', type: 'string' }
+      ]
+    },
+    {
+      name: 'os', type: 'object', sub: [
+        { name: 'name', type: 'string' },
+        { name: 'version', type: 'string' }
+      ]
+    },
+    { name: 'ua', type: 'string' }
+  ],
+  dataPickObject: true,
+  properties : [
+    {
+      group: 'User Agent Properties',
+      variables: [
+        { name: 'actionName', optionName: 'name', title: 'Name', type: 'text', required: true, defaultValue: 'userAgent'},
+        { name: 'userAgent', optionName: 'userAgent', title: 'User Agent', type: 'text', help: 'This value should usually be set to $_SERVER.HTTP_USER_AGENT', required: true, serverDataBindings: true}
+      ]
+    }
+  ]
+}

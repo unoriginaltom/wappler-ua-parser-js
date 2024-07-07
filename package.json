@@ -1,0 +1,13 @@
+{
+    "name": "@astrovia/wappler-ua-parser-js",
+    "author": "astrovia",
+    "version": "1.0.0",
+    "description": "Implements the ua-parser-js npm package into Wappler's server connect",
+    "license": "MIT",
+    "keywords": [
+        "wappler-extension"
+    ],
+    "dependencies": {
+        "ua-parser-js": "^1.0.38"
+    }
+}
